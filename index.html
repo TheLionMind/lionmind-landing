@@ -15,7 +15,7 @@
             color: #f5f5f5;
             scroll-behavior: smooth;
         }
-
+        
         .logo {
             max-width: 90px;
             max-height: 90px;
@@ -90,6 +90,31 @@
         .nav-link:hover::after {
             width: 100%;
         }
+        
+        /* Estilos ajustados para as imagens dos produtos */
+        .product-image-container {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            padding: 20px;
+        }
+        
+        /* Ajuste para imagens específicas que precisam de mais espaço */
+        .product-image-large {
+            padding: 10px;
+        }
     </style>
 </head>
 <body class="bg-forja-gradient">
@@ -159,11 +184,11 @@
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 gold-text text-center md:text-left">
                       FORJE SEU DESTINO
                     </h1>
-                  
+                                    
                     <p class="text-xl md:text-2xl mb-8 text-gray-300">
                       Produtos que transformam pessoas comuns em versões extraordinárias de si mesmas.
                     </p>
-                  
+                                    
                     <div class="flex justify-center md:justify-start">
                       <a href="#produtos" class="gold-bg text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-600 transition duration-300">
                         EXPLORAR PRODUTOS
@@ -171,9 +196,9 @@
                     </div>
                   </div>
                 <div class="md:w-1/2 flex justify-center">
-                    <img src="guerreiro2.png" 
-                         alt="Homem forjando seu destino" 
-                         class="rounded-lg shadow-2xl max-w-xs h-auto border-2 gold-border">
+                    <img src="guerreiro2.png"
+                          alt="Homem forjando seu destino"
+                          class="rounded-lg shadow-2xl max-w-xs h-auto border-2 gold-border">
                 </div>
             </div>
         </div>
@@ -185,172 +210,211 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gold-text">NOSSOS PRODUTOS</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
                 <!-- Product Card 1 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="lmnd.png" 
-                    alt="Camiseta A Forja" 
-                    class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="manual.webp"
+                        alt="Camiseta A Forja"
+                        class="product-image" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2 gold-text">E-book gratuito Manual da Mente Milionária</h3>
+                        <p class="text-gray-300 mb-4">Aprenda os hábitos que moldam a mentalidade milionária
+                             Descubra o que está sabotando seu sucesso sem você perceber
+                                                         
+                             Ative seu poder de foco, disciplina e atração
+                                                         
+                             Desenvolvido para quem quer crescer de verdade
+                                                         
+                             Leitura rápida, prática e 100% gratuita
+                        </p>
+                                             
+                        <button onclick="window.location.href='https://thelionmind.github.io/ebook-gratis/'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                            Quero o meu E-book
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- lion mind -->
+                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="product-image-container">
+                        <img src="lmnd.png"
+                        alt="Camiseta A Forja"
+                        class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">LionMind (LMND) A Moeda do Seu Crescimento</h3>
                         <p class="text-gray-300 mb-4">LionMind (LMND) é a primeira criptomoeda que paga por você se tornar sua melhor versão.
                             Transforme sua evolução pessoal em lucro real. Cada hábito, conquista e meta alcançada vira valorização no seu bolso.
                             Cresça. Prospere. Lucre. Invista em si mesmo e colha em LMND.
                         </p>
-                    
-
-                        <button onclick="window.location.href='https://thelionmind.github.io/lionmind/'" 
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                                             
+                        <button onclick="window.location.href='https://thelionmind.github.io/lionmind/'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             PARTICIPAR DA PRÉ-VENDA
                         </button>
                     </div>
                 </div>
-
+                
                 <!-- Product Card 1 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="o codigo da auto confiança.png" 
-                    alt="Camiseta A Forja" 
-                    class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="o codigo da auto confiança.png"
+                        alt="Camiseta A Forja"
+                        class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">O Código da Autoconfiança: Liberte Seu Potencial Escondido</h3>
                         <p class="text-gray-300 mb-4">Confiança não é dom, é construção. Decifre o código para se tornar inabalável, deixar o medo no retrovisor e agir com coragem em qualquer situação. Uma vez desbloqueada, sua autoconfiança será sua arma mais letal.</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/6CbQGeq'" 
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                         <button onclick="window.location.href='https://pay.kiwify.com.br/6CbQGeq'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
                 </div>
-                
+                                
                 <!-- Product Card 2 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="do caos a clareza.png" 
-                         alt="Camiseta A Forja" 
-                         class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="do caos a clareza.png"
+                              alt="Camiseta A Forja"
+                              class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">Do Caos à Clareza: Como Transformar Crise em Crescimento</h3>
                         <p class="text-gray-300 mb-4">A vida é feita de tempestades. Quem sobrevive? Quem sabe transformar caos em direção. Aprenda a encontrar lucidez no meio da bagunça, criar planos em meio à dúvida e crescer enquanto os outros desmoronam.</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/ouETZkp'" 
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                         <button onclick="window.location.href='https://pay.kiwify.com.br/ouETZkp'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
                 </div>
-                
+                                
                 <!-- Product Card 3 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="Disciplina inquebravel.png" 
-                         alt="Pulseira de Aço" 
-                         class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="Disciplina inquebravel.png"
+                              alt="Pulseira de Aço"
+                              class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">Disciplina Inquebrável: O Código da Execução Sem Desculpas</h3>
                         <p class="text-gray-300 mb-4">Disciplina não é talento,é uma escolha diária.Acabe com as desculpas, blinde sua força de vontade e aprenda como agir todos os dias, mesmo quando a motivação sumir. Quem domina a disciplina, domina o mundo.</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/84GhtoK'" 
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                        <button onclick="window.location.href='https://pay.kiwify.com.br/84GhtoK'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
                 </div>
-                
+                                
                 <!-- Product Card 4 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="alpha 2.0.webp" 
-                         alt="Caderno de Metas" 
-                         class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="alpha 2.0.webp"
+                              alt="Caderno de Metas"
+                              class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">Alpha 2.0: A Nova Era da Autossuficiência e Poder Pessoal</h3>
                         <p class="text-gray-300 mb-4">O mundo mudou, e o verdadeiro alfa evoluiu. Conheça o Alpha 2.0: um ser livre, inabalável e totalmente dono da sua realidade. Se você quer viver no controle absoluto da sua vida. Este é o manual que você precisa.</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/oEliTvr'" 
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                         <button onclick="window.location.href='https://pay.kiwify.com.br/oEliTvr'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
                 </div>
-                
+                                
                 <!-- Product Card 5 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="7 habitos.webp" 
-                         alt="Kit de Treinamento" 
-                         class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="7 habitos.webp"
+                              alt="Kit de Treinamento"
+                              class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">7 Hábitos que Moldam uma Mente Imparável</h3>
                         <p class="text-gray-300 mb-4">Descubra os 7 hábitos que transformam pessoas comuns em máquinas de realização. Domine sua mente, conquiste seus objetivos e seja imparável. O sucesso começa nas pequenas ações diárias — aprenda a dominar as suas!</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/5j5AUuS'"
+                         <button onclick="window.location.href='https://pay.kiwify.com.br/5j5AUuS'"
                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
                 </div>
-                
+                                
                 <!-- Product Card 6 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="colecao.webp" 
-                         alt="Garrafa Tática" 
-                         class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="colecao.webp"
+                              alt="Garrafa Tática"
+                              class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">Coleção Completa: 5 Obras para Desbloquear Seu Potencial Máximo</h3>
                         <p class="text-gray-300 mb-4">Uma seleção matadora de livros que vão reprogramar sua mente para a excelência. Desenvolvimento pessoal, disciplina, liderança e clareza mental — tudo o que você precisa para sair da média e construir a sua melhor versão. É agora ou nunca.</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 89,90</p>
-
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/s9l1hrI'" 
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                         <button onclick="window.location.href='https://pay.kiwify.com.br/s9l1hrI'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
                 </div>
-                
+                                
                 <!-- Product Card 7 -->
                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="ebook.webp" 
-                         alt="Mochila Estratégica" 
-                         class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="ebook.webp"
+                              alt="Mochila Estratégica"
+                              class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">Como Criar, Lançar e Vender eBooks Profissionais Usando Apenas IA (Sem Complicar)</h3>
                         <p class="text-gray-300 mb-4">Descubra como escrever, montar a capa, estruturar e vender seu eBook de forma prática e estratégica. Tudo passo a passo, com links diretos para as melhores ferramentas e dicas para maximizar suas vendas. Pare de perder tempo e comece a gerar resultados hoje!</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 19,90</p>
-
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/ySlo9kz'" 
+                         <button onclick="window.location.href='https://pay.kiwify.com.br/ySlo9kz'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                            COMPRAR AGORA
+                        </button>
+                    </div>
+                </div>
+                                
+                <!-- Product Card 8 -->
+                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="product-image-container">
+                        <img src="fitness.png"
+                              alt="Acessório de Couro"
+                              class="product-image" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2 gold-text">Guia de treinos interativo com conteúdos sempre atualizados</h3>
+                        <p class="text-gray-300 mb-4">Nunca mais fique em dúvida sobre a execução de um exercício. Acesse nosso guia interativo e treine com confiança.</p>
+                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 37,00</p>
+                         <button onclick="window.location.href='https://pay.kiwify.com.br/AyE6G8k?afid=FbxZ9NOK'"
                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
                 </div>
                 
-                <!-- Product Card 8 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="fitness.png" 
-                         alt="Acessório de Couro" 
-                         class="w-full max-h-64 object-contain" />
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Guia de treinos interativo com conteúdos sempre atualizados</h3>
-                        <p class="text-gray-300 mb-4">Nunca mais fique em dúvida sobre a execução de um exercício. Acesse nosso guia interativo e treine com confiança.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 37,00</p>
-
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/AyE6G8k?afid=FbxZ9NOK'"
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                 <!-- Product Card 9 -->
+                <!-- Product Card 9 -->
                  <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <img src="mapa.png" 
-                         alt="Acessório de Couro" 
-                         class="w-full max-h-64 object-contain" />
+                    <div class="product-image-container">
+                        <img src="mapa.png"
+                              alt="Acessório de Couro"
+                              class="product-image" />
+                    </div>
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2 gold-text">Acelere Seu Sucesso em todas as esferas da sua vida em tempo recorde.</h3>
                         <p class="text-gray-300 mb-4">Conheça o plano exato para o seu crescimento pessoal, avanço profissional e prosperidade financeira para alavancar sua vida ainda em 2025.</p>
                         <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 39,00</p>
-
-                        <button onclick="window.location.href='https://kiwify.app/pumk5It?afid=Uwyri1b6'" 
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
+                         <button onclick="window.location.href='https://kiwify.app/pumk5It?afid=Uwyri1b6'"
+                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
                             COMPRAR AGORA
                         </button>
                     </div>
@@ -373,7 +437,7 @@
                                 <p class="text-gray-300">Assim como o aço é temperado no fogo, nós acreditamos que os grandes homens são forjados através dos desafios.</p>
                             </div>
                         </div>
-                        
+                                                
                         <div class="flex items-start mb-4">
                             <i class="fas fa-fist-raised text-2xl gold-text mr-4 mt-1"></i>
                             <div>
@@ -381,7 +445,7 @@
                                 <p class="text-gray-300">Nossos produtos são ferramentas para construir a mentalidade de um guerreiro moderno.</p>
                             </div>
                         </div>
-                        
+                                                
                         <div class="flex items-start">
                             <i class="fas fa-trophy text-2xl gold-text mr-4 mt-1"></i>
                             <div>
@@ -390,14 +454,14 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-lg text-gray-300 italic">"O ferro se deteriora com a ferrugem, o homem com a inércia. Mantenha-se em movimento."</p>
+                    <p class="text-lg text-gray-300 italic">"O ferro se deteriora com a ferrugem, o man com a inércia. Mantenha-se em movimento."</p>
                 </div>
-                
+                                
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
-                        <img src="aforja.webp" 
-                             alt="Forja de metal" 
-                             class="rounded-lg shadow-2xl max-w-full h-auto border-2 gold-border">
+                        <img src="aforja.webp"
+                              alt="Forja de metal"
+                              class="rounded-lg shadow-2xl max-w-full h-auto border-2 gold-border">
                         <div class="absolute -bottom-5 -right-5 bg-gray-900 p-4 rounded-lg shadow-lg border gold-border">
                             <p class="text-sm gold-text font-bold">DESDE 2018 TRANSFORMANDO VIDAS</p>
                         </div>
@@ -431,7 +495,7 @@
                         <i class="fas fa-star gold-text"></i>
                     </div>
                 </div>
-                
+                                
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
                     <div class="flex items-center mb-4">
@@ -450,7 +514,7 @@
                         <i class="fas fa-star gold-text"></i>
                     </div>
                 </div>
-                
+                                
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
                     <div class="flex items-center mb-4">
@@ -468,7 +532,7 @@
                         <i class="fas fa-star-half-alt gold-text"></i>
                     </div>
                 </div>
-                
+                                
                 <!-- Testimonial 4 -->
                 <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
                     <div class="flex items-center mb-4">
@@ -487,7 +551,7 @@
                         <i class="fas fa-star gold-text"></i>
                     </div>
                 </div>
-                
+                                
                 <!-- Testimonial 5 -->
                 <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
                     <div class="flex items-center mb-4">
@@ -506,7 +570,7 @@
                         <i class="far fa-star gold-text"></i>
                     </div>
                 </div>
-                
+                                
                 <!-- Testimonial 6 -->
                 <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
                     <div class="flex items-center mb-4">
@@ -545,7 +609,7 @@
                         <p>Aceitamos todas as bandeiras de cartão de crédito (Visa, Mastercard, Elo, American Express), boleto bancário e PIX. Parcelamos em até 12x no cartão.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 2 -->
                 <div class="faq-item mb-4 border-b gold-border pb-4">
                     <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(2)">
@@ -556,9 +620,7 @@
                         <p>Por se tratar de um produto digital, a entrega é imediata após a confirmação do pagamento. Você receberá o acesso diretamente no e-mail cadastrado.</p>
                     </div>
                 </div>
-                
-                
-                
+                                                            
                 <!-- FAQ Item 3 -->
                 <div class="faq-item mb-4 border-b gold-border pb-4">
                     <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(4)">
@@ -569,7 +631,7 @@
                         <p>Sim! Todos os nossos produtos têm garantia contra defeitos de fabricação. O período varia por produto: livros e cadernos (3 meses), roupas (6 meses), acessórios e equipamentos (12 meses).</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 4 -->
                 <div class="faq-item mb-4 border-b gold-border pb-4">
                     <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(5)">
@@ -590,14 +652,14 @@
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 gold-text">JUNTE-SE À NOSSA COMUNIDADE</h2>
                 <p class="text-xl text-gray-300 mb-8">Cadastre-se para receber conteúdos exclusivos e participar do sorteio mensal de produtos!</p>
-                
+                                
                 <form class="flex flex-col sm:flex-row gap-4 justify-center">
                     <input type="email" placeholder="Seu melhor e-mail" class="px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 w-full sm:w-96">
                     <button type="submit" class="gold-bg text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-600 transition duration-300">
                         QUERO PARTICIPAR
                     </button>
                 </form>
-                
+                                
                 <p class="text-sm text-gray-500 mt-4">Prometemos não enviar spam. Você pode cancelar sua inscrição a qualquer momento.</p>
             </div>
         </div>
@@ -613,10 +675,9 @@
                         <span class="ml-2 text-xl font-bold gold-text">A FORJA</span>
                     </div>
                     <p class="text-gray-400 max-w-xs">Transformando pessoas comuns em versões extraordinárias de si mesmas.
-
-                        desde 2018.</p>
+                         desde 2018.</p>
                 </div>
-                
+                                
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
                     <div>
                         <h3 class="text-lg font-bold mb-4 gold-text">Links Rápidos</h3>
@@ -627,7 +688,7 @@
                             <li><a href="#faq" class="text-gray-400 hover:text-yellow-400">FAQ</a></li>
                         </ul>
                     </div>
-                    
+                                    
                     <div>
                         <h3 class="text-lg font-bold mb-4 gold-text">Contato</h3>
                         <ul class="space-y-2">
@@ -636,7 +697,7 @@
                             <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> Santa Catarina, SC</li>
                         </ul>
                     </div>
-                    
+                                    
                     <div>
                         <h3 class="text-lg font-bold mb-4 gold-text">Redes Sociais</h3>
                         <div class="flex space-x-4">
@@ -712,17 +773,17 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
+                                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+                                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
+                                        
                     // Close mobile menu if open
                     mobileMenu.classList.add('hidden');
                 }
