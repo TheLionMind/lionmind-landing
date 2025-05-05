@@ -1,807 +1,1269 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Forja - Transformando Sonhos em Realidade</title>
+    <title>MENTE BLINDADA 7X - Os 7 códigos para dominar seu mundo interno e externo</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#000000',
+                        'secondary': '#121212',
+                        'accent': '#FFD700',
+                        'accent-dark': '#D4AF37',
+                        'accent-light': '#FFECB3',
+                        'danger': '#E63946',
+                        'success': '#2A9D8F',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0f0f0f;
-            color: #f5f5f5;
+        html {
             scroll-behavior: smooth;
         }
-        
-        .logo {
-            max-width: 90px;
-            max-height: 90px;
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: white;
+            overflow-x: hidden;
         }
-        
-        .bg-forja-gradient {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-anton {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
-        
-        .gold-text {
-            color: #D4AF37;
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(18, 18, 18, 0.8) 100%);
         }
-        
-        .gold-border {
-            border-color: #D4AF37;
+
+        .card-hover {
+            transition: all 0.3s ease;
         }
-        
-        .gold-bg {
-            background-color: #D4AF37;
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(212, 175, 55, 0.3), 0 10px 10px -5px rgba(212, 175, 55, 0.1);
         }
-        
-        .red-bg {
-            background-color: #8B0000;
+
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
         }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+
+        .glow-box {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
-        
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .countdown-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .btn-pulse:hover {
+            animation: pulse-slow 2s infinite;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+            margin-bottom: 1rem;
+        }
+
         .testimonial-card {
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border-left: 4px solid #FFD700;
         }
-        
-        .testimonial-card:hover {
-            transform: scale(1.03);
+
+        .ebook-card {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border-top: 4px solid #FFD700;
         }
-        
-        .faq-item {
-            transition: all 0.3s ease;
+
+        .bonus-card {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 1px solid #FFD700;
         }
-        
-        .faq-item:hover {
-            background-color: rgba(212, 175, 55, 0.1);
-        }
-        
-        .promo-banner {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.9; }
-            50% { opacity: 1; }
-            100% { opacity: 0.9; }
-        }
-        
+
         .nav-link {
             position: relative;
         }
-        
-        .nav-link::after {
+
+        .nav-link:after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: 0;
+            bottom: -2px;
             left: 0;
-            background-color: #D4AF37;
+            background-color: #FFD700;
             transition: width 0.3s ease;
         }
-        
-        .nav-link:hover::after {
+
+        .nav-link:hover:after {
             width: 100%;
         }
-        
-        /* Estilos ajustados para as imagens dos produtos */
-        .product-image-container {
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #1a1a1a;
+
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .mobile-menu.closed {
+            max-height: 0;
+            opacity: 0;
             overflow: hidden;
-            position: relative;
         }
-        
-        .product-image {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
+
+        .testimonial-slide {
+            transition: transform 0.5s ease;
+        }
+
+        .payment-icon {
+            height: 30px;
             object-fit: contain;
-            padding: 20px;
-        }
-        
-        /* Ajuste para imagens específicas que precisam de mais espaço */
-        .product-image-large {
-            padding: 10px;
+            filter: brightness(0) invert(1);
         }
     </style>
 </head>
-<body class="bg-forja-gradient">
-    <!-- Promo Banner -->
-    <div class="promo-banner red-bg text-white text-center py-5 px-4 font-bold">
-        🔥 PROMOÇÃO POR TEMPO LIMITADO! Desconto de 10% para compras acima de R$50 - Use o cupom: FORJA10 🔥
+
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/qr/CS7FMK3H4Y55P1"
+        class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl z-50 shadow-lg transform transition hover:scale-110">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Fixed CTA -->
+    <div class="fixed bottom-0 left-0 right-0 bg-secondary py-3 px-4 shadow-lg z-40 hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <h4 class="font-anton text-accent text-xl">MENTE BLINDADA 7X</h4>
+                <p class="text-sm text-gray-300">Os 7 códigos para dominar seu mundo interno e externo</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="text-center">
+                    <p class="text-xs text-gray-300">OFERTA TERMINA EM:</p>
+                    <div class="flex space-x-2">
+                        <div class="bg-primary text-accent font-bold px-2 py-1 rounded text-sm">02</div>
+                        <div class="bg-primary text-accent font-bold px-2 py-1 rounded text-sm">12</div>
+                        <div class="bg-primary text-accent font-bold px-2 py-1 rounded text-sm">34</div>
+                    </div>
+                </div>
+                <a href="#checkout"
+                    class="bg-accent hover:bg-accent-dark text-primary font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    QUERO MEU PACK AGORA
+                </a>
+            </div>
+        </div>
     </div>
-    
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-lg">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo -->
+
+    <!-- Navigation -->
+    <nav class="bg-primary bg-opacity-90 backdrop-filter backdrop-blur-sm py-4 px-4 sticky top-0 z-30 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <img src="logo.png" alt="A Forja Logo" class="logo">
-                <span class="ml-5 text-xl font-bold gold-text">A FORJA</span>
+                <span class="font-anton text-accent text-2xl">MENTE BLINDADA</span>
+                <span class="font-anton text-white text-2xl ml-1">7X</span>
             </div>
-            
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="#produtos" class="nav-link text-white hover:text-yellow-400">Produtos</a>
-                <a href="#sobre" class="nav-link text-white hover:text-yellow-400">Sobre Nós</a>
-                <a href="#depoimentos" class="nav-link text-white hover:text-yellow-400">Depoimentos</a>
-                <a href="#faq" class="nav-link text-white hover:text-yellow-400">FAQ</a>
-            </nav>
-            
-            <!-- Social Icons -->
-            <div class="flex space-x-4">
-                <a href="https://www.tiktok.com/@aforjadehomens" target="_blank" class="text-white hover:text-yellow-400">
-                    <i class="fab fa-tiktok text-xl"></i>
-                </a>
-                <a href="https://www.instagram.com/sonhado.sucesso/" target="_blank" class="text-white hover:text-yellow-400">
-                    <i class="fab fa-instagram text-xl"></i>
-                </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="nav-link text-white hover:text-accent">Início</a>
+                <a href="#about" class="nav-link text-white hover:text-accent">O Pack</a>
+                <a href="#ebooks" class="nav-link text-white hover:text-accent">Ebooks</a>
+                <a href="#bonus" class="nav-link text-white hover:text-accent">Bônus</a>
+                <a href="#testimonials" class="nav-link text-white hover:text-accent">Depoimentos</a>
+                <a href="#checkout" class="nav-link text-white hover:text-accent">Comprar</a>
             </div>
-            
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95 py-4 px-4">
-            <div class="flex flex-col space-y-4">
-                <a href="#produtos" class="text-white hover:text-yellow-400">Produtos</a>
-                <a href="#sobre" class="text-white hover:text-yellow-400">Sobre Nós</a>
-                <a href="#depoimentos" class="text-white hover:text-yellow-400">Depoimentos</a>
-                <a href="#faq" class="text-white hover:text-yellow-400">FAQ</a>
-                <div class="flex space-x-4 pt-2">
-                    <a href="https://www.tiktok.com/@aforjadehomens" target="_blank" class="text-white hover:text-yellow-400">
-                        <i class="fab fa-tiktok text-xl"></i>
-                    </a>
-                    <a href="https://www.instagram.com/sonhado.sucesso/" target="_blank" class="text-white hover:text-yellow-400">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
+
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </header>
-    
+
+        <div id="mobile-menu" class="mobile-menu closed md:hidden bg-primary mt-2 rounded-lg shadow-lg">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#hero" class="block text-white hover:text-accent">Início</a>
+                <a href="#about" class="block text-white hover:text-accent">O Pack</a>
+                <a href="#ebooks" class="block text-white hover:text-accent">Ebooks</a>
+                <a href="#bonus" class="block text-white hover:text-accent">Bônus</a>
+                <a href="#testimonials" class="block text-white hover:text-accent">Depoimentos</a>
+                <a href="#checkout" class="block text-white hover:text-accent">Comprar</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="relative bg-black py-20">
-        <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-0"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 gold-text text-center md:text-left">
-                      FORJE SEU DESTINO
-                    </h1>
-                                    
-                    <p class="text-xl md:text-2xl mb-8 text-gray-300">
-                      Produtos que transformam pessoas comuns em versões extraordinárias de si mesmas.
-                    </p>
-                                    
-                    <div class="flex justify-center md:justify-start">
-                      <a href="#produtos" class="gold-bg text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-600 transition duration-300">
-                        EXPLORAR PRODUTOS
-                      </a>
-                    </div>
-                  </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="guerreiro2.png"
-                          alt="Homem forjando seu destino"
-                          class="rounded-lg shadow-2xl max-w-xs h-auto border-2 gold-border">
-                </div>
-            </div>
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-gradient z-10"></div>
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
+            <video autoplay muted loop class="w-full h-full object-cover">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-grid-15845-large.mp4"
+                    type="video/mp4">
+            </video>
         </div>
-    </section>
-    
-    <!-- Products Section -->
-    <section id="produtos" class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gold-text">NOSSOS PRODUTOS</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Product Card 1 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="manual.webp"
-                        alt="Camiseta A Forja"
-                        class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">E-book gratuito Manual da Mente Milionária</h3>
-                        <p class="text-gray-300 mb-4">Aprenda os hábitos que moldam a mentalidade milionária
-                             Descubra o que está sabotando seu sucesso sem você perceber
-                                                         
-                             Ative seu poder de foco, disciplina e atração
-                                                         
-                             Desenvolvido para quem quer crescer de verdade
-                                                         
-                             Leitura rápida, prática e 100% gratuita
-                        </p>
-                                             
-                        <button onclick="window.location.href='https://thelionmind.github.io/ebook-gratis/'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            Quero o meu E-book
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- lion mind -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="lmnd.png"
-                        alt="Camiseta A Forja"
-                        class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">LionMind (LMND) A Moeda do Seu Crescimento</h3>
-                        <p class="text-gray-300 mb-4">LionMind (LMND) é a primeira criptomoeda que paga por você se tornar sua melhor versão.
-                            Transforme sua evolução pessoal em lucro real. Cada hábito, conquista e meta alcançada vira valorização no seu bolso.
-                            Cresça. Prospere. Lucre. Invista em si mesmo e colha em LMND.
-                        </p>
-                                             
-                        <button onclick="window.location.href='https://thelionmind.github.io/lionmind/'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            PARTICIPAR DA PRÉ-VENDA
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Product Card 1 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="o codigo da auto confiança.png"
-                        alt="Camiseta A Forja"
-                        class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">O Código da Autoconfiança: Liberte Seu Potencial Escondido</h3>
-                        <p class="text-gray-300 mb-4">Confiança não é dom, é construção. Decifre o código para se tornar inabalável, deixar o medo no retrovisor e agir com coragem em qualquer situação. Uma vez desbloqueada, sua autoconfiança será sua arma mais letal.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-                         <button onclick="window.location.href='https://pay.kiwify.com.br/6CbQGeq'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                                
-                <!-- Product Card 2 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="do caos a clareza.png"
-                              alt="Camiseta A Forja"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Do Caos à Clareza: Como Transformar Crise em Crescimento</h3>
-                        <p class="text-gray-300 mb-4">A vida é feita de tempestades. Quem sobrevive? Quem sabe transformar caos em direção. Aprenda a encontrar lucidez no meio da bagunça, criar planos em meio à dúvida e crescer enquanto os outros desmoronam.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-                         <button onclick="window.location.href='https://pay.kiwify.com.br/ouETZkp'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                                
-                <!-- Product Card 3 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="Disciplina inquebravel.png"
-                              alt="Pulseira de Aço"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Disciplina Inquebrável: O Código da Execução Sem Desculpas</h3>
-                        <p class="text-gray-300 mb-4">Disciplina não é talento,é uma escolha diária.Acabe com as desculpas, blinde sua força de vontade e aprenda como agir todos os dias, mesmo quando a motivação sumir. Quem domina a disciplina, domina o mundo.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-                        <button onclick="window.location.href='https://pay.kiwify.com.br/84GhtoK'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                                
-                <!-- Product Card 4 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="alpha 2.0.webp"
-                              alt="Caderno de Metas"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Alpha 2.0: A Nova Era da Autossuficiência e Poder Pessoal</h3>
-                        <p class="text-gray-300 mb-4">O mundo mudou, e o verdadeiro alfa evoluiu. Conheça o Alpha 2.0: um ser livre, inabalável e totalmente dono da sua realidade. Se você quer viver no controle absoluto da sua vida. Este é o manual que você precisa.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-                         <button onclick="window.location.href='https://pay.kiwify.com.br/oEliTvr'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                                
-                <!-- Product Card 5 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="7 habitos.webp"
-                              alt="Kit de Treinamento"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">7 Hábitos que Moldam uma Mente Imparável</h3>
-                        <p class="text-gray-300 mb-4">Descubra os 7 hábitos que transformam pessoas comuns em máquinas de realização. Domine sua mente, conquiste seus objetivos e seja imparável. O sucesso começa nas pequenas ações diárias — aprenda a dominar as suas!</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 29,90</p>
-                         <button onclick="window.location.href='https://pay.kiwify.com.br/5j5AUuS'"
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                                
-                <!-- Product Card 6 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="colecao.webp"
-                              alt="Garrafa Tática"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Coleção Completa: 5 Obras para Desbloquear Seu Potencial Máximo</h3>
-                        <p class="text-gray-300 mb-4">Uma seleção matadora de livros que vão reprogramar sua mente para a excelência. Desenvolvimento pessoal, disciplina, liderança e clareza mental — tudo o que você precisa para sair da média e construir a sua melhor versão. É agora ou nunca.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 89,90</p>
-                         <button onclick="window.location.href='https://pay.kiwify.com.br/s9l1hrI'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                                
-                <!-- Product Card 7 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="ebook.webp"
-                              alt="Mochila Estratégica"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Como Criar, Lançar e Vender eBooks Profissionais Usando Apenas IA (Sem Complicar)</h3>
-                        <p class="text-gray-300 mb-4">Descubra como escrever, montar a capa, estruturar e vender seu eBook de forma prática e estratégica. Tudo passo a passo, com links diretos para as melhores ferramentas e dicas para maximizar suas vendas. Pare de perder tempo e comece a gerar resultados hoje!</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 19,90</p>
-                         <button onclick="window.location.href='https://pay.kiwify.com.br/ySlo9kz'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                                
-                <!-- Product Card 8 -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="fitness.png"
-                              alt="Acessório de Couro"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Guia de treinos interativo com conteúdos sempre atualizados</h3>
-                        <p class="text-gray-300 mb-4">Nunca mais fique em dúvida sobre a execução de um exercício. Acesse nosso guia interativo e treine com confiança.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 37,00</p>
-                         <button onclick="window.location.href='https://pay.kiwify.com.br/AyE6G8k?afid=FbxZ9NOK'"
-                        class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Product Card 9 -->
-                 <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300">
-                    <div class="product-image-container">
-                        <img src="mapa.png"
-                              alt="Acessório de Couro"
-                              class="product-image" />
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2 gold-text">Acelere Seu Sucesso em todas as esferas da sua vida em tempo recorde.</h3>
-                        <p class="text-gray-300 mb-4">Conheça o plano exato para o seu crescimento pessoal, avanço profissional e prosperidade financeira para alavancar sua vida ainda em 2025.</p>
-                        <p class="text-3xl font-extrabold text-yellow-400 drop-shadow-md mb-4">R$ 39,00</p>
-                         <button onclick="window.location.href='https://kiwify.app/pumk5It?afid=Uwyri1b6'"
-                         class="w-full gold-bg text-black font-bold py-2 rounded hover:bg-yellow-600 transition duration-300">
-                            COMPRAR AGORA
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="sobre" class="py-20 bg-black">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 gold-text">A FORJA DE SUCESSO</h2>
+
+        <div class="container mx-auto px-4 relative z-20 py-20">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
                     <div class="mb-6">
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-fire text-2xl gold-text mr-4 mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 gold-text">Transformação pelo Fogo</h3>
-                                <p class="text-gray-300">Assim como o aço é temperado no fogo, nós acreditamos que os grandes homens são forjados através dos desafios.</p>
-                            </div>
+                        <span class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm">LANÇAMENTO
+                            EXCLUSIVO</span>
+                    </div>
+                    <h1 class="font-anton text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
+                        <span class="text-accent">MENTE BLINDADA</span> <span class="text-white">7X</span>
+                    </h1>
+                    <h2 class="font-montserrat text-xl md:text-2xl text-gray-300 mb-8">
+                        Os 7 códigos para dominar seu mundo interno e externo
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        Sua mente é o campo de batalha. Essa coleção é seu arsenal. Transforme-se com os 7 eBooks que
+                        vão blindar sua mente para conquistar autoconfiança, disciplina e mentalidade milionária.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#checkout"
+                            class="bg-accent hover:bg-accent-dark text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                            <span>QUERO DESBLOQUEAR MEU POTENCIAL</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#about"
+                            class="border-2 border-accent text-accent hover:bg-accent hover:text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                            <span>SAIBA MAIS</span>
+                            <i class="fas fa-book-open ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                class="w-10 h-10 rounded-full border-2 border-accent">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                                class="w-10 h-10 rounded-full border-2 border-accent">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg"
+                                class="w-10 h-10 rounded-full border-2 border-accent">
                         </div>
-                                                
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-fist-raised text-2xl gold-text mr-4 mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 gold-text">Resiliência como Arma</h3>
-                                <p class="text-gray-300">Nossos produtos são ferramentas para construir a mentalidade de um guerreiro moderno.</p>
-                            </div>
-                        </div>
-                                                
-                        <div class="flex items-start">
-                            <i class="fas fa-trophy text-2xl gold-text mr-4 mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 gold-text">Vitória como Hábito</h3>
-                                <p class="text-gray-300">Não vendemos apenas produtos, mas um estilo de vida de excelência e superação.</p>
+                        <div>
+                            <p class="text-sm text-gray-300">+5.872 mentes transformadas</p>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-accent mr-1"></i>
+                                <i class="fas fa-star text-accent mr-1"></i>
+                                <i class="fas fa-star text-accent mr-1"></i>
+                                <i class="fas fa-star text-accent mr-1"></i>
+                                <i class="fas fa-star text-accent mr-1"></i>
+                                <span class="text-gray-300 ml-1">4.9/5</span>
                             </div>
                         </div>
                     </div>
-                    <p class="text-lg text-gray-300 italic">"O ferro se deteriora com a ferrugem, o man com a inércia. Mantenha-se em movimento."</p>
                 </div>
-                                
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <img src="aforja.webp"
-                              alt="Forja de metal"
-                              class="rounded-lg shadow-2xl max-w-full h-auto border-2 gold-border">
-                        <div class="absolute -bottom-5 -right-5 bg-gray-900 p-4 rounded-lg shadow-lg border gold-border">
-                            <p class="text-sm gold-text font-bold">DESDE 2018 TRANSFORMANDO VIDAS</p>
+
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative floating">
+                        <img src="mente-blindada.png" alt="Pack Mente Blindada 7X"
+                            class="w-full max-w-md rounded-lg shadow-2xl glow-box transform rotate-3">
+                        <div
+                            class="absolute -bottom-6 -right-6 bg-accent text-primary font-bold py-2 px-6 rounded-full shadow-lg">
+                            <span class="text-lg">R$ 89,90</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20">
+            <a href="#about" class="text-gray-300 hover:text-accent animate-bounce">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
     </section>
-    
-    <!-- Testimonials Section -->
-    <section id="depoimentos" class="py-16 bg-gray-900">
+
+    <!-- About Product -->
+    <section id="about" class="py-20 bg-secondary">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gold-text">DEPOIMENTOS</h2>
-            
+            <div class="text-center mb-16">
+                <span class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mb-4 inline-block">O QUE
+                    VOCÊ VAI RECEBER</span>
+                <h2 class="font-anton text-3xl md:text-5xl mb-6">
+                    <span class="text-accent">7 ARMAS MENTAIS</span> <span class="text-white">PARA DOMINAR O JOGO DA
+                        VIDA</span>
+                </h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                    <span class="text-accent font-bold">MENTE BLINDADA 7X</span> é uma coleção estratégica de
+                    eBooks que vão te equipar com as ferramentas mentais mais poderosas para construir autoconfiança
+                    inabalável, disciplina de elite e a mentalidade dos grandes vencedores.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-primary p-8 rounded-lg shadow-lg card-hover">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-brain text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-anton text-xl text-center text-accent mb-4">REPROGRAMAÇÃO MENTAL</h3>
+                    <p class="text-gray-300 text-center">
+                        Elimine crenças limitantes e instale padrões de pensamento de alta performance que os
+                        milionários usam diariamente.
+                    </p>
+                </div>
+
+                <div class="bg-primary p-8 rounded-lg shadow-lg card-hover">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-trophy text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-anton text-xl text-center text-accent mb-4">AUTOCONFIANÇA RADICAL</h3>
+                    <p class="text-gray-300 text-center">
+                        Desenvolva uma presença magnética e a convicção inabalável de que você merece e pode conquistar
+                        tudo o que deseja.
+                    </p>
+                </div>
+
+                <div class="bg-primary p-8 rounded-lg shadow-lg card-hover">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-money-bill-wave text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-anton text-xl text-center text-accent mb-4">MENTALIDADE MILIONÁRIA</h3>
+                    <p class="text-gray-300 text-center">
+                        Aprenda os princípios psicológicos que separam os que acumulam riqueza daqueles que apenas
+                        sonham com ela.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#checkout"
+                    class="bg-accent hover:bg-accent-dark text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-flex items-center">
+                    <span>QUERO MEU PACK AGORA</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ebooks Section -->
+    <section id="ebooks" class="py-20 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mb-4 inline-block">CONHEÇA
+                    OS EBOOKS</span>
+                <h2 class="font-anton text-3xl md:text-5xl mb-6">
+                    <span class="text-white">O CONTEÚDO QUE VAI</span> <span class="text-accent">REVOLUCIONAR SUA
+                        MENTE</span>
+                </h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                    Cada eBook foi meticulosamente elaborado para atacar uma área específica do seu desenvolvimento
+                    pessoal, criando uma transformação completa em 360 graus.
+                </p>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
+                <!-- Ebook 1 -->
+                <div class="ebook-card p-6 rounded-lg shadow-lg card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold gold-text">Carlos Silva</h4>
-                            <p class="text-sm text-gray-400">Empresário</p>
-                        </div>
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-3">#1</div>
+                        <h3 class="font-anton text-xl text-accent">O Código da Autoconfiança</h3>
                     </div>
-                    <p class="text-gray-300 italic">"Esse e-book me deu um tapa de realidade. Em menos de uma semana, comecei a aplicar os hábitos e já senti diferença na minha energia, foco e confiança. É leitura obrigatória pra quem quer dominar o próprio jogo mental."</p>
-                    <div class="flex mt-4">
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
+                    <img src="o codigo da auto confiança.png" alt="O Código da Autoconfiança"
+     class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        Desbloqueie a autoconfiança inabalável que está dentro de você. Aprenda técnicas comprovadas
+                        para eliminar a dúvida e cultivar uma autoimagem poderosa.
+                    </p>
+                    <ul class="text-gray-300 mb-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Técnicas de
+                            reprogramação mental</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Exercícios de
+                            autoafirmação</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Como vencer o
+                            medo do julgamento</li>
+                    </ul>
+                </div>
+
+                <!-- Ebook 2 -->
+                <div class="ebook-card p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-3">#2</div>
+                        <h3 class="font-anton text-xl text-accent">Do Caos à Clareza</h3>
+                    </div>
+                    <img src="do caos a clareza.png" alt="Do Caos à Clareza"
+                    class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        Transforme a confusão mental em foco laser. Domine o método passo a passo para tomar decisões
+                        precisas e agir com propósito.
+                    </p>
+                    <ul class="text-gray-300 mb-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Sistema de
+                            organização mental</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Técnicas de
+                            priorização</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Como eliminar
+                            a procrastinação</li>
+                    </ul>
+                </div>
+
+                <!-- Ebook 3 -->
+                <div class="ebook-card p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-3">#3</div>
+                        <h3 class="font-anton text-xl text-accent">7 Hábitos que Moldam uma Mente Imparável</h3>
+                    </div>
+                    <img src="7 habitos.webp" alt="7 Hábitos que Moldam uma Mente Imparável"
+                        class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        Os hábitos diários que separar os medianos dos excepcionais. Implemente rotinas que constroem
+                        disciplina de aço e resultados extraordinários.
+                    </p>
+                    <ul class="text-gray-300 mb-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Rotina
+                            matinal de alto impacto</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Hábitos de
+                            produtividade</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Como manter
+                            consistência</li>
+                    </ul>
+                </div>
+
+                <!-- Ebook 4 -->
+                <div class="ebook-card p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-3">#4</div>
+                        <h3 class="font-anton text-xl text-accent">Alpha 2.0</h3>
+                    </div>
+                    <img src="alpha 2.0.webp" alt="Alpha 2.0" class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        Ative seu modo Alpha e assuma o controle da sua vida. Desenvolva a postura, a linguagem corporal
+                        e a mentalidade de um líder natural.
+                    </p>
+                    <ul class="text-gray-300 mb-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Linguagem
+                            corporal de poder</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Técnicas de
+                            comunicação assertiva</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Como projetar
+                            autoridade</li>
+                    </ul>
+                </div>
+
+                <!-- Ebook 5 -->
+                <div class="ebook-card p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-3">#5</div>
+                        <h3 class="font-anton text-xl text-accent">Disciplina Inquebrável</h3>
+                    </div>
+                    <img src="Disciplina inquebravel.png" alt="Disciplina Inquebrável"
+                        class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        A ciência por trás da disciplina de elite. Domine seu cérebro e crie a força de vontade
+                        necessária para conquistar qualquer objetivo.
+                    </p>
+                    <ul class="text-gray-300 mb-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Como criar
+                            hábitos automáticos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Técnicas de
+                            autocontrole</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Superando a
+                            resistência mental</li>
+                    </ul>
+                </div>
+
+                <!-- Ebook 6 -->
+                <div class="ebook-card p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-3">#6</div>
+                        <h3 class="font-anton text-xl text-accent">Manual da Mente Milionária</h3>
+                    </div>
+                    <img src="manual.webp" alt="Manual da Mente Milionária"
+                        class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        Reprograme sua mente para atrair riqueza. Aprenda os padrões de pensamento e as estratégias
+                        mentais que os milionários usam para criar e multiplicar seu dinheiro.
+                    </p>
+                    <ul class="text-gray-300 mb-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Mentalidade
+                            de abundância</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Como pensar
+                            como um investidor</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Eliminando
+                            bloqueios financeiros</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="#checkout"
+                    class="bg-accent hover:bg-accent-dark text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-flex items-center">
+                    <span>QUERO TODOS OS 6 EBOOKS</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section id="bonus" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mb-4 inline-block">BÔNUS
+                    EXCLUSIVOS</span>
+                <h2 class="font-anton text-3xl md:text-5xl mb-6">
+                    <span class="text-white">COMPRE AGORA E RECEBA</span> <span class="text-accent">BÔNUS
+                        ESPECIAIS</span>
+                </h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                    Para garantir que você tenha tudo o que precisa para sua transformação, estamos incluindo esses
+                    bônus de alto valor completamente GRÁTIS.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Bonus 1 -->
+                <div class="bonus-card p-8 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-4">BÔNUS #1</div>
+                        <h3 class="font-anton text-xl text-accent flex-1">Como Criar, Lançar e Vender eBooks Usando IA
+                        </h3>
+                    </div>
+                    <img src="ebook.webp" alt="Bônus 1" class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        Aprenda o método passo a passo para criar eBooks de alta qualidade usando inteligência
+                        artificial, lançar no mercado e começar a gerar renda passiva.
+                    </p>
+                    <div class="bg-primary bg-opacity-50 p-4 rounded">
+                        <p class="text-accent font-bold mb-2">VALOR: R$ 69,90</p>
+                        <p class="text-gray-300 text-sm">Seu hoje <span class="text-accent font-bold">GRÁTIS</span> ao
+                            adquirir o pack MENTE BLINDADA 7X</p>
                     </div>
                 </div>
-                                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold gold-text">Ricardo Almeida</h4>
-                            <p class="text-sm text-gray-400">Atleta</p>
-                        </div>
+
+                <!-- Bonus 2 -->
+                <div class="bonus-card p-8 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mr-4">BÔNUS #2</div>
+                        <h3 class="font-anton text-xl text-accent flex-1">Planner de Alta Performance - 30 dias</h3>
                     </div>
-                    <p class="text-gray-300 italic">"Não é só sobre ser 'alpha', é sobre evoluir de dentro pra fora. Esse material me mostrou como parar de depender dos outros e assumir o controle total da minha vida. Me senti no comando pela primeira vez em anos."</p>
-                    <div class="flex mt-4">
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                    </div>
-                </div>
-                                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold gold-text">Marcos Oliveira</h4>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">"Era mestre em procrastinar… até ler esse e-book. A forma como ele quebra nossas desculpas é brutal — no melhor sentido. Hoje sigo uma rotina de execução que jamais imaginei ser capaz."</p>
-                    <div class="flex mt-4">
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star-half-alt gold-text"></i>
+                    <img src="planer.png" alt="Bônus 2"
+                        class="w-full max-h-96 object-contain rounded mb-4">
+                    <p class="text-gray-300 mb-4">
+                        O planner perfeito para implementar tudo o que você aprenderá nos eBooks. Com exercícios
+                        diários, metas semanais e sistema de acompanhamento de progresso.
+                    </p>
+                    <div class="bg-primary bg-opacity-50 p-4 rounded">
+                        <p class="text-accent font-bold mb-2">VALOR: R$ 39,90</p>
+                        <p class="text-gray-300 text-sm">Seu hoje <span class="text-accent font-bold">GRÁTIS</span> ao
+                            adquirir o pack MENTE BLINDADA 7X</p>
                     </div>
                 </div>
-                                
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold gold-text">Ana Beatriz</h4>
-                            <p class="text-sm text-gray-400">Advogada</p>
+            </div>
+
+            <div class="text-center">
+                <div class="inline-block bg-primary p-6 rounded-lg shadow-lg mb-8">
+                    <h3 class="font-anton text-xl text-accent mb-2">VALOR TOTAL DOS BÔNUS</h3>
+                    <p class="text-gray-300 mb-2">R$ 109,80</p>
+                    <p class="text-accent font-bold text-lg">SEUS HOJE GRÁTIS!</p>
+                </div>
+
+                <div class="countdown-box p-6 rounded-lg max-w-2xl mx-auto mb-8">
+                    <h3 class="font-anton text-xl text-accent mb-4">OFERTA POR TEMPO LIMITADO!</h3>
+                    <div class="flex justify-center space-x-4 mb-4">
+                        <div class="text-center">
+                            <div class="bg-primary text-accent font-bold text-3xl py-2 px-4 rounded">02</div>
+                            <div class="text-gray-300 text-sm mt-1">HORAS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-primary text-accent font-bold text-3xl py-2 px-4 rounded">12</div>
+                            <div class="text-gray-300 text-sm mt-1">MINUTOS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-primary text-accent font-bold text-3xl py-2 px-4 rounded">34</div>
+                            <div class="text-gray-300 text-sm mt-1">SEGUNDOS</div>
                         </div>
                     </div>
-                    <p class="text-gray-300 italic">"Li durante um momento difícil e foi como encontrar um mapa no meio da tempestade. Esse conteúdo me ajudou a enxergar possibilidades onde antes eu só via fracasso. Crescimento real começa aqui"</p>
-                    <div class="flex mt-4">
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
+                    <p class="text-gray-300">Esses bônus estão disponíveis apenas para as primeiras 100 compras!</p>
+                </div>
+
+                <a href="#checkout"
+                    class="bg-accent hover:bg-accent-dark text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-flex items-center">
+                    <span>QUERO MEU PACK + BÔNUS AGORA</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span
+                    class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mb-4 inline-block">DEPOIMENTOS</span>
+                <h2 class="font-anton text-3xl md:text-5xl mb-6">
+                    <span class="text-white">O QUE AS PESSOAS ESTÃO</span> <span class="text-accent">FALANDO SOBRE O
+                        PACK</span>
+                </h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                    Veja como o MENTE BLINDADA 7X está transformando vidas e mentes em todo o Brasil.
+                </p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto overflow-hidden">
+                <div id="testimonial-slider" class="flex transition-transform duration-500">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide testimonial-card p-6 rounded-lg shadow-lg min-w-full">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente"
+                                class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Ana Carolina</h4>
+                                <div class="flex">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "Depois de ler o 'Código da Autoconfiança', minha vida mudou completamente. Finalmente
+                            consegui pedir a promoção que merecia e fui promovida! O investimento no pack foi o melhor
+                            que já fiz."
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide testimonial-card p-6 rounded-lg shadow-lg min-w-full">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente"
+                                class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Ricardo Almeida</h4>
+                                <div class="flex">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "O 'Manual da Mente Milionária' me abriu os olhos para oportunidades que estavam na minha
+                            frente o tempo todo. Em 3 meses já multipliquei meus investimentos por 5. Valeu cada
+                            centavo!"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide testimonial-card p-6 rounded-lg shadow-lg min-w-full">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente"
+                                class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Fernanda Gomes</h4>
+                                <div class="flex">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "A disciplina sempre foi meu ponto fraco. Depois do 'Disciplina Inquebrável', criei uma
+                            rotina que me permite trabalhar, estudar e ainda ter tempo para mim. Transformação
+                            incrível!"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide testimonial-card p-6 rounded-lg shadow-lg min-w-full">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente"
+                                class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Marcos Silva</h4>
+                                <div class="flex">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "O Alpha 2.0 mudou completamente minha postura no trabalho. Em 2 semanas já recebi elogios
+                            do meu chefe sobre minha nova atitude mais confiante e assertiva. Recomendo demais!"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-slide testimonial-card p-6 rounded-lg shadow-lg min-w-full">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Cliente"
+                                class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Juliana Santos</h4>
+                                <div class="flex">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "O 'Do Caos à Clareza' me ajudou a organizar meus pensamentos e prioridades como nunca
+                            antes. Minha produtividade aumentou em pelo menos 300%. Estou impressionada!"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-slide testimonial-card p-6 rounded-lg shadow-lg min-w-full">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Cliente"
+                                class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Carlos Eduardo</h4>
+                                <div class="flex">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "Comprei o pack há 6 meses e já reli todos os eBooks pelo menos 2 vezes. Cada releitura me
+                            traz novos insights. Esse material é realmente transformador!"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-slide testimonial-card p-6 rounded-lg shadow-lg min-w-full">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Cliente"
+                                class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-white">Patrícia Oliveira</h4>
+                                <div class="flex">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "Os 7 Hábitos que Moldam uma Mente Imparável me deram a estrutura que faltava para minha
+                            rotina. Agora acordo mais cedo, faço exercícios e consigo produzir o dobro no trabalho.
+                            Incrível!"
+                        </p>
                     </div>
                 </div>
-                                
-                <!-- Testimonial 5 -->
-                <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold gold-text">Felipe Costa</h4>
-                            <p class="text-sm text-gray-400">Estudante</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">"Sempre fui inseguro, mas esse livro ativou uma virada mental absurda. Comecei a acreditar mais em mim e parei de buscar validação externa. Resultado? Promoção no trabalho e uma nova postura de vida."</p>
-                    <div class="flex mt-4">
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="far fa-star gold-text"></i>
-                    </div>
+
+                <button id="prev-testimonial"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-accent text-primary w-10 h-10 rounded-full flex items-center justify-center z-10 ml-2">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-testimonial"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-accent text-primary w-10 h-10 rounded-full flex items-center justify-center z-10 mr-2">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="flex justify-center mt-4 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600"></button>
                 </div>
-                                
-                <!-- Testimonial 6 -->
-                <div class="testimonial-card bg-gray-800 rounded-lg p-6 shadow-lg border gold-border">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold gold-text">Roberto Santos</h4>
-                            <p class="text-sm text-gray-400">Veterano Militar</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">"Comprei a coleção e virei fã. É como ter uma mentoria compactada em e-books. Cada título traz um soco de motivação e ferramentas práticas pra sair da zona de conforto. Vale cada centavo."</p>
-                    <div class="flex mt-4">
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                        <i class="fas fa-star gold-text"></i>
-                    </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#checkout"
+                    class="bg-accent hover:bg-accent-dark text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-flex items-center">
+                    <span>EU QUERO ESSA TRANSFORMAÇÃO</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center justify-center">
+                <div class="lg:w-1/3 mb-8 lg:mb-0 flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/411/411745.png" alt="Garantia"
+                        class="w-48 h-48 object-contain">
+                </div>
+                <div class="lg:w-2/3 text-center lg:text-left">
+                    <h2 class="font-anton text-3xl md:text-4xl mb-6">
+                        <span class="text-white">GARANTIA INCONDICIONAL DE</span> <span class="text-accent">7
+                            DIAS</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-6 max-w-2xl mx-auto lg:mx-0">
+                        Se em até 7 dias você achar que o MENTE BLINDADA 7X não é para você, basta enviar um email e
+                        devolveremos 100% do seu investimento. Sem perguntas, sem burocracia.
+                    </p>
+                    <p class="text-accent font-bold text-xl">
+                        Zero risco para você. Apenas resultados.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-black">
+
+    <!-- Checkout -->
+    <section id="checkout" class="py-20 bg-primary">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gold-text">PERGUNTAS FREQUENTES</h2>
-            
-            <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mb-4 inline-block">ÚLTIMA
+                    CHANCE</span>
+                <h2 class="font-anton text-3xl md:text-5xl mb-6">
+                    <span class="text-white">ADQUIRA AGORA O</span> <span class="text-accent">MENTE BLINDADA 7X</span>
+                </h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                    Invista no seu desenvolvimento pessoal e dê o primeiro passo para transformar sua mente e sua vida.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-secondary rounded-lg shadow-xl overflow-hidden">
+                <div class="bg-accent py-4 px-6">
+                    <h3 class="font-anton text-xl text-center text-primary">PACK COMPLETO</h3>
+                </div>
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <p class="text-gray-300 line-through mb-1">De R$ 197,00</p>
+                        <p class="text-4xl font-bold text-accent mb-2">R$ 89,90</p>
+                        <p class="text-gray-300">à vista ou 12x de R$ 9,12</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="font-bold text-white text-lg mb-4">O QUE VOCÊ VAI RECEBER:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span class="text-gray-300">6 eBooks transformadores (valor individual: R$
+                                    197,00)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span class="text-gray-300">Bônus: Como Criar eBooks com IA (valor: R$ 69,90)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span class="text-gray-300">Bônus: Planner de Alta Performance (valor: R$ 39,90)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span class="text-gray-300">Acesso imediato e vitalício</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span class="text-gray-300">Atualizações gratuitas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span class="text-gray-300">Garantia de 7 dias</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+
+                    <a href="https://pay.kiwify.com.br/fJxLHt6"
+                        class="block bg-accent hover:bg-accent-dark text-primary font-bold py-4 px-6 rounded text-center transition duration-300 text-lg">
+                        QUERO O PACK COMPLETO AGORA
+                    </a>
+
+                    <div class="mt-6 text-center">
+                        <div class="inline-flex items-center bg-primary px-6 py-3 rounded-full">
+                            <i class="fas fa-lock text-accent mr-2"></i>
+                            <span class="text-gray-300">Compra 100% segura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="countdown-box p-6 rounded-lg max-w-2xl mx-auto mt-8">
+                <h3 class="font-anton text-xl text-accent mb-4">OFERTA POR TEMPO LIMITADO!</h3>
+                <div class="flex justify-center space-x-4 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary text-accent font-bold text-3xl py-2 px-4 rounded">02</div>
+                        <div class="text-gray-300 text-sm mt-1">HORAS</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-accent font-bold text-3xl py-2 px-4 rounded">12</div>
+                        <div class="text-gray-300 text-sm mt-1">MINUTOS</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-accent font-bold text-3xl py-2 px-4 rounded">34</div>
+                        <div class="text-gray-300 text-sm mt-1">SEGUNDOS</div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-center">Essa oferta especial termina em breve!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="bg-accent text-primary font-bold py-1 px-3 rounded-full text-sm mb-4 inline-block">DÚVIDAS
+                    FREQUENTES</span>
+                <h2 class="font-anton text-3xl md:text-5xl mb-6">
+                    <span class="text-white">PERGUNTAS</span> <span class="text-accent">E RESPOSTAS</span>
+                </h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
                 <!-- FAQ Item 1 -->
-                <div class="faq-item mb-4 border-b gold-border pb-4">
-                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(1)">
-                        <h3 class="text-xl font-bold gold-text">Quais são as formas de pagamento?</h3>
-                        <i class="fas fa-chevron-down gold-text" id="faq-icon-1"></i>
-                    </div>
-                    <div id="faq-content-1" class="hidden mt-3 text-gray-300">
-                        <p>Aceitamos todas as bandeiras de cartão de crédito (Visa, Mastercard, Elo, American Express), boleto bancário e PIX. Parcelamos em até 12x no cartão.</p>
-                    </div>
-                </div>
-                                
-                <!-- FAQ Item 2 -->
-                <div class="faq-item mb-4 border-b gold-border pb-4">
-                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(2)">
-                        <h3 class="text-xl font-bold gold-text">Qual o prazo de entrega?</h3>
-                        <i class="fas fa-chevron-down gold-text" id="faq-icon-2"></i>
-                    </div>
-                    <div id="faq-content-2" class="hidden mt-3 text-gray-300">
-                        <p>Por se tratar de um produto digital, a entrega é imediata após a confirmação do pagamento. Você receberá o acesso diretamente no e-mail cadastrado.</p>
-                    </div>
-                </div>
-                                                            
-                <!-- FAQ Item 3 -->
-                <div class="faq-item mb-4 border-b gold-border pb-4">
-                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(4)">
-                        <h3 class="text-xl font-bold gold-text">Os produtos têm garantia?</h3>
-                        <i class="fas fa-chevron-down gold-text" id="faq-icon-4"></i>
-                    </div>
-                    <div id="faq-content-4" class="hidden mt-3 text-gray-300">
-                        <p>Sim! Todos os nossos produtos têm garantia contra defeitos de fabricação. O período varia por produto: livros e cadernos (3 meses), roupas (6 meses), acessórios e equipamentos (12 meses).</p>
-                    </div>
-                </div>
-                                
-                <!-- FAQ Item 4 -->
-                <div class="faq-item mb-4 border-b gold-border pb-4">
-                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(5)">
-                        <h3 class="text-xl font-bold gold-text">Como entro em contato com o suporte?</h3>
-                        <i class="fas fa-chevron-down gold-text" id="faq-icon-5"></i>
-                    </div>
-                    <div id="faq-content-5" class="hidden mt-3 text-gray-300">
-                        <p>Nosso suporte está disponível de segunda a sexta, das 9h às 18h, pelo WhatsApp (48) 988719855 ou e-mail aforjamasculina@gmail.com. Respondemos em até 24 horas úteis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 gold-text">JUNTE-SE À NOSSA COMUNIDADE</h2>
-                <p class="text-xl text-gray-300 mb-8">Cadastre-se para receber conteúdos exclusivos e participar do sorteio mensal de produtos!</p>
-                                
-                <form class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <input type="email" placeholder="Seu melhor e-mail" class="px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 w-full sm:w-96">
-                    <button type="submit" class="gold-bg text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-600 transition duration-300">
-                        QUERO PARTICIPAR
+                <div class="bg-primary rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="font-bold text-lg text-white">Como receberei meus eBooks após a compra?</h3>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
                     </button>
-                </form>
-                                
-                <p class="text-sm text-gray-500 mt-4">Prometemos não enviar spam. Você pode cancelar sua inscrição a qualquer momento.</p>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            Imediatamente após a confirmação do pagamento, você receberá um email com acesso à área de
+                            membros, onde poderá baixar todos os eBooks em formato PDF, EPUB e MOBI, compatíveis com
+                            qualquer dispositivo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-primary rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="font-bold text-lg text-white">Por quanto tempo terei acesso ao material?</h3>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            O acesso é vitalício! Você poderá baixar os eBooks e acessá-los quando e onde quiser, além
+                            de receber todas as atualizações futuras sem custo adicional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-primary rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="font-bold text-lg text-white">Os bônus são realmente gratuitos?</h3>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            Sim! Ao adquirir o pack MENTE BLINDADA 7X, você recebe os bônus sem nenhum custo adicional.
+                            São materiais de alto valor que complementam perfeitamente sua jornada de transformação.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-primary rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="font-bold text-lg text-white">Como funciona a garantia de 7 dias?</h3>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            Se dentro de 7 dias após a compra você achar que o material não é para você, basta enviar um
+                            email para nosso suporte solicitando o reembolso. Devolveremos 100% do seu dinheiro, sem
+                            perguntas ou burocracias.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-primary rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                        <h3 class="font-bold text-lg text-white">Posso comprar apenas um eBook específico?</h3>
+                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            O pack foi cuidadosamente elaborado para oferecer uma transformação completa em todas as
+                            áreas da sua mente. Por isso, os eBooks não são vendidos separadamente. Aproveite esta
+                            oportunidade única de adquirir todos com um desconto especial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-300 mb-6">Ainda tem dúvidas? Fale conosco!</p>
+                <a href="https://www.instagram.com/sonhado.sucesso/"
+                    class="inline-flex items-center bg-accent hover:bg-accent-dark text-primary font-bold py-3 px-6 rounded transition duration-300">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span>ENVIE UMA MENSAGEM</span>
+                </a>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="bg-black py-12">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-8 md:mb-0">
-                    <div class="flex items-center mb-4">
-                        <img src="logo.png" alt="A Forja Logo" class="h-10">
-                        <span class="ml-2 text-xl font-bold gold-text">A FORJA</span>
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <span class="font-anton text-accent text-2xl">MENTE BLINDADA</span>
+                        <span class="font-anton text-white text-2xl ml-1">7X</span>
                     </div>
-                    <p class="text-gray-400 max-w-xs">Transformando pessoas comuns em versões extraordinárias de si mesmas.
-                         desde 2018.</p>
+                    <p class="text-gray-400 mt-2">Os 7 códigos para dominar seu mundo interno e externo</p>
                 </div>
-                                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-lg font-bold mb-4 gold-text">Links Rápidos</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#produtos" class="text-gray-400 hover:text-yellow-400">Produtos</a></li>
-                            <li><a href="#sobre" class="text-gray-400 hover:text-yellow-400">Sobre Nós</a></li>
-                            <li><a href="#depoimentos" class="text-gray-400 hover:text-yellow-400">Depoimentos</a></li>
-                            <li><a href="#faq" class="text-gray-400 hover:text-yellow-400">FAQ</a></li>
-                        </ul>
-                    </div>
-                                    
-                    <div>
-                        <h3 class="text-lg font-bold mb-4 gold-text">Contato</h3>
-                        <ul class="space-y-2">
-                            <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> aforjamasculina@gmail.com</li>
-                            <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> (48) 98871-9855</li>
-                            <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> Santa Catarina, SC</li>
-                        </ul>
-                    </div>
-                                    
-                    <div>
-                        <h3 class="text-lg font-bold mb-4 gold-text">Redes Sociais</h3>
-                        <div class="flex space-x-4">
-                            <a href="https://www.tiktok.com/@aforjadehomens" target="_blank" class="text-gray-400 hover:text-yellow-400">
-                                <i class="fab fa-tiktok text-xl"></i>
-                            </a>
-                            <a href="https://www.instagram.com/sonhado.sucesso/" target="_blank" class="text-gray-400 hover:text-yellow-400">
-                                <i class="fab fa-instagram text-xl"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-yellow-400">
-                                <i class="fab fa-youtube text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
+
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-accent transition duration-300">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition duration-300">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 A Forja. Todos os direitos reservados.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-yellow-400 text-sm">Termos de Serviço</a>
-                    <a href="#" class="text-gray-500 hover:text-yellow-400 text-sm">Política de Privacidade</a>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="font-bold text-white mb-4">MENU</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#hero"
+                                    class="text-gray-400 hover:text-accent transition duration-300">Início</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-accent transition duration-300">O
+                                    Pack</a></li>
+                            <li><a href="#ebooks"
+                                    class="text-gray-400 hover:text-accent transition duration-300">Ebooks</a></li>
+                            <li><a href="#bonus"
+                                    class="text-gray-400 hover:text-accent transition duration-300">Bônus</a></li>
+                            <li><a href="#testimonials"
+                                    class="text-gray-400 hover:text-accent transition duration-300">Depoimentos</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-white mb-4">INFORMAÇÕES</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-accent transition duration-300">Termos de
+                                    Uso</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-accent transition duration-300">Política de
+                                    Privacidade</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-accent transition duration-300">Garantia</a>
+                            </li>
+                            <li><a href="#" class="text-gray-400 hover:text-accent transition duration-300">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-white mb-4">SUPORTE</h4>
+                        <ul class="space-y-2">
+                            <li><a href="mailto:suporte@menteblindada7x.com"
+                                    class="text-gray-400 hover:text-accent transition duration-300">suporte@menteblindada7x.com</a>
+                            </li>
+                            <li><a href="https://wa.me/qr/CS7FMK3H4Y55P1"
+                                    class="text-gray-400 hover:text-accent transition duration-300">(48) 988719855</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
                 </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2023 MENTE BLINDADA 7X. Todos os direitos reservados.
+                </p>
+                <p class="text-gray-500 text-sm mt-2">
+                    Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do
+                    Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar
+                    claramente e mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu
+                    e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam.
+                </p>
             </div>
         </div>
     </footer>
-    
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/qr/CS7FMK3H4Y55P1" target="_blank" class="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition duration-300 z-50">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-    
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 left-6 bg-gray-800 text-yellow-400 p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 z-50 hidden">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
+
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // FAQ Toggle
-        function toggleFAQ(index) {
-            const content = document.getElementById(`faq-content-${index}`);
-            const icon = document.getElementById(`faq-icon-${index}`);
-            
-            content.classList.toggle('hidden');
-            icon.classList.toggle('fa-chevron-down');
-            icon.classList.toggle('fa-chevron-up');
-        }
-        
-        // Back to Top Button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('hidden');
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('closed')) {
+                menu.classList.remove('closed');
+                menu.classList.add('open');
             } else {
-                backToTopButton.classList.add('hidden');
+                menu.classList.remove('open');
+                menu.classList.add('closed');
             }
         });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                content.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
         });
-        
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                                        
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
+
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 0);
+
+            let diff = endOfDay - now;
+
+            if (diff <= 0) {
+                diff = 0;
+            }
+
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            diff -= hours * 1000 * 60 * 60;
+
+            const minutes = Math.floor(diff / (1000 * 60));
+            diff -= minutes * 1000 * 60;
+
+            const seconds = Math.floor(diff / 1000);
+
+            document.querySelectorAll('.countdown-box .bg-primary:nth-child(1)').forEach(el => {
+                el.textContent = hours.toString().padStart(2, '0');
+            });
+
+            document.querySelectorAll('.countdown-box .bg-primary:nth-child(2)').forEach(el => {
+                el.textContent = minutes.toString().padStart(2, '0');
+            });
+
+            document.querySelectorAll('.countdown-box .bg-primary:nth-child(3)').forEach(el => {
+                el.textContent = seconds.toString().padStart(2, '0');
+            });
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        const slider = document.getElementById('testimonial-slider');
+
+        function showTestimonial(index) {
+            currentTestimonial = index;
+            slider.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === currentTestimonial) {
+                    dot.classList.add('bg-accent');
+                    dot.classList.remove('bg-gray-600');
+                } else {
+                    dot.classList.remove('bg-accent');
+                    dot.classList.add('bg-gray-600');
                 }
             });
+        }
+
+        document.getElementById('next-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
         });
-        
-        // Add hover effect to product cards
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.querySelector('button').classList.add('bg-yellow-600');
-                card.querySelector('button').classList.remove('gold-bg');
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.querySelector('button').classList.remove('bg-yellow-600');
-                card.querySelector('button').classList.add('gold-bg');
+
+        document.getElementById('prev-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        // Auto slide
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
             });
         });
+
+        // Initialize first dot as active
+        dots[0].classList.add('bg-accent');
+        dots[0].classList.remove('bg-gray-600');
+
+        // Scroll to top button
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollToTopBtn.className = 'fixed bottom-24 right-8 bg-accent hover:bg-accent-dark text-primary w-12 h-12 rounded-full flex items-center justify-center text-xl z-50 shadow-lg'
+
     </script>
+
+
+
 </body>
-</html>
